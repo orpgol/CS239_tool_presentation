@@ -1,7 +1,7 @@
 # CS239_tool_presentation
 
 ## Tutorial on using GENPROG to fix a simple program
-Becuse of the setup cost for configuring a working environmet for GENPROG we suggest using a virtual machine provided by the creators of the tool.
+Becuse of the setup cost for configuring a working environmet for GENPROG we suggest using a virtual machine provided by the creators of the tool.\n
 GENPORG documentation page can be found [here](http://dijkstra.cs.virginia.edu/genprog/).
 The vitrual machine we will use in this tutorial can be found [here](http://dijkstra.cs.virginia.edu/genprog/resources/autorepairbenchmarks/VirtualMachines/).
 Download the contents of 'genprog_icse2012_virtualbox/' and repackage them in a single folder.
