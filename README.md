@@ -10,4 +10,5 @@ In case you are using another virtualization software you will need to convert t
 
 ### Coverting the .vmdk image
 Using a tool calld ovf tool, we can convert a .vmdk image to a .vmx image using the following steps:
-* download the tool [here](https://www.vmware.com/support/developer/ovf/) from the VMware website. * use the tool to convert your image into the desired extension <path to tool>/ovftool --lax <folder that contains the image files> <result>.vmx
+* download the tool [here](https://www.vmware.com/support/developer/ovf/) from the VMware website. 
+* use the tool to convert your image into the desired extension <path to tool>/ovftool --lax <folder that contains the image files> <result>.vmx
