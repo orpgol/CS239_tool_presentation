@@ -33,4 +33,61 @@ Once you have your IP address, use the following command to copy your .tar file 
 
 scp \<path to .tar file>/genprog-source-v1.tar root@\<your IP address>:~/
 
-~~~~ fhdsfhkjsdhdjksn ~~~~
+## Using GENPROG to fix a buggy program
+The virtaul machine provides us with a buggy implementation of the greatest common denominator along with passing and failing test cases.
+
+The rest of this tutorial will provide the commands you can run to successfully patch this program using GENPROG.
+
+### Compiling the program
+from /~:
+
+~~~~
+tar -xvf genprog-source-v1.tar
+cd genprog-source-v1
+make
+~~~~
+
+The command we will run to patch a program is "modify".
+
+To view it's paramaters you can run:
+
+~~~~
+modify --help
+~~~~
+
+### Verifying program performance 
+
+~~~~
+cd quad
+gcc gcd.c -o run
+./run 10 15
+~~~~
+We expect this to output 5
+
+~~~~
+./run 0 55
+~~~~
+We expect this to output 55 then loop forever, thus exhibiting buggy performance.
+
+### Patching a program
+
+~~~~
+../modify --max 15 --good_path_factor 0.01 --seed 0 -- mut 0.6 gcd.c
+cd minimize/
+gcc best.c -o run
+./run 0 55
+~~~~
+best.c contains the minimized patched program returned by GENPROG.
+
+Running it with the previously failing testcase should now pass.
+
+~~~~
+./run 10 15
+~~~~
+Running with the previously passing testcase should still pass.
+
+
+### Voila! 
+GENPROG has patched our program!
+
+
